@@ -2,7 +2,8 @@ import pygame
 
 
 class Text:
-    def __init__(self, content, font, size, color, x, y):
+    def __init__(self,screen, content, font, size, color, x, y):
+        self.screen     = screen
         self.content    = content
         self.font       = font
         self.size       = size
@@ -18,10 +19,10 @@ class Text:
             self.font_obj = pygame.font.SysFont(None, self.size)
             print(f"Font '{self.font}' not found. Using default font instead.")
 
-        self.surface = self.font_obj.render(self.content, True, self.color)
-        self.rect = self.surface.get_rect()
-        self.rect.x = self.x
-        self.rect.y = self.y
+        self.surface    = self.font_obj.render(self.content, True, self.color)
+        self.rect       = self.surface.get_rect()
+        self.rect.x     = self.x
+        self.rect.y     = self.y
 
-    def draw(self, screen):
-        screen.blit(self.surface, self.rect)
+    def draw(self):
+        self.screen.blit(self.surface, self.rect)

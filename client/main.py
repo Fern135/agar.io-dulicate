@@ -21,7 +21,7 @@ def render(surface, pos=()):
 
 player = Player(surface)
 # bg = LoadBackground(surface, "imgPath") #TODO: implement loading of background
-txt = Text("this is a test", None, 26, COLOR['silver'], 100, 100)
+# txt = Text("this is a test", None, 26, COLOR['silver'], 100, 100)
 
 while True:
     for event in pygame.event.get():
@@ -38,7 +38,7 @@ while True:
 
     #game code
     player.draw()
-    txt.draw()
+    # txt.draw()
 
 
     pygame.display.update()
